@@ -23,6 +23,9 @@ documentation: |-
   ```
   VBoxManage controlvm panamax-vm natpf1 rule8514,tcp,,8514,,8514
   ```
+  ```
+  VBoxManage controlvm panamax-vm natpf1 rule9200,tcp,,9200,,9200
+  ```
 
   You can manually log a message from the command line like this:
   ```
@@ -35,7 +38,7 @@ documentation: |-
   logger -n 127.0.0.1 -p 8514 Hello from Docker
   ```
 
-  Then, open the browser to [localhost:8080](http://127.0.0.1:8080), and you should see Kibana.  Try searching for 'Panamax', 'CoreOS', 'Docker' and 'Hello'.
+  Then, open your browser to [localhost:8080](http://127.0.0.1:8080), and you should see Kibana.  Try searching for 'Panamax', 'CoreOS', 'Docker' and 'Hello'.
 
   You can use Kibana & syslog from anywhere on your local network: you just need to change 127.0.0.1 to your machine's IP address.
 
@@ -70,6 +73,11 @@ images:
   source: dockerfile/elasticsearch:latest
   category: Storage Tier
   type: Default
+  expose:
+  - '9200'
+  ports:
+  - host_port: '9200'
+    container_port: '9200'
 - name: logstash
   source: arcus/logstash:latest
   category: Logging tier
@@ -83,7 +91,7 @@ images:
   - service: elasticsearch
     alias: es
 - name: kibana
-  source: arcus/kibana:latest
+  source: justinsb/kibana:latest
   category: Front-end Tier
   type: Default
   expose:
