@@ -1,6 +1,5 @@
----
 name: ELK stack; searchable syslog
-description: Logstash with elasticsearch
+description: ElasticSearch, Logstash, Kibana; indexing your syslogs
 keywords: elk, logging, elasticsearch, logstash, kibana, syslog
 type: Default
 documentation: |-
