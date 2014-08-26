@@ -75,11 +75,14 @@ images:
   type: Default
   expose:
   - '9200'
+  - '9300'
   ports:
   - host_port: '9200'
     container_port: '9200'
+  - host_port: '9300'
+    container_port: '9300'
 - name: logstash
-  source: arcus/logstash:latest
+  source: justinsb/logstash:latest
   category: Logging tier
   type: Default
   expose:
