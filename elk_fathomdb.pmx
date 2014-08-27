@@ -87,9 +87,12 @@ images:
   type: Default
   expose:
   - '8514'
+  - '9292'
   ports:
   - host_port: '8514'
     container_port: '514'
+  - host_port: '9292'
+    container_port: '9292'
   links:
   - service: elasticsearch
     alias: es
