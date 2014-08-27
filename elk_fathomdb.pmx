@@ -29,13 +29,13 @@ documentation: |-
 
   You can manually log a message from the command line like this:
   ```
-  logger -n 127.0.0.1 -p 8514 Hello from Panamax
+  logger -n 127.0.0.1 --port 8514 Hello from Panamax
   ```
   ```
-  logger -n 127.0.0.1 -p 8514 Hello from CoreOS
+  logger -n 127.0.0.1 --port 8514 Hello from CoreOS
   ```
   ```
-  logger -n 127.0.0.1 -p 8514 Hello from Docker
+  logger -n 127.0.0.1 --port 8514 Hello from Docker
   ```
 
   Then, open your browser to [localhost:8080](http://127.0.0.1:8080), and you should see Kibana.  Try searching for 'Panamax', 'CoreOS', 'Docker' and 'Hello'.
